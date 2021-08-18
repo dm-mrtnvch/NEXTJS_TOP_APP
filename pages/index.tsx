@@ -2,11 +2,23 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import {Htag} from '../components/Htag/Htag';
+import {Button} from '../components/Button/Button';
+import {P, Tag} from '../components';
 
 export default function Home(): JSX.Element {
   return (
       <div>
         <Htag tag='h1'>text</Htag>
+          <Button appearance='primary' className='fsdfsdfzzzzzzzzzzzzzzzzzzzz' arrow={'right'}>button</Button>
+          <Button appearance='ghost' arrow={'down'}>ghost button</Button>
+          <P size={'l'}>BIG</P>
+          <P size={'m'}>MediuM</P>
+          <P size={'s'}>small</P>
+          <Tag size="s">ghost</Tag>
+          <Tag size="s" color='primary'>small primary</Tag>
+          <Tag size="m" color='red'>small red</Tag>
+          <Tag color='grey'>small red</Tag>
+          <Tag href={'https://banana.by/ '}>small red</Tag>
       </div>
     // <div className={styles.container}>
     //   <main className={styles.main}>
