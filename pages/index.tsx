@@ -3,13 +3,27 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import {Htag} from '../components/Htag/Htag';
 import {Button} from '../components/Button/Button';
-import {P, Tag} from '../components';
+import {P, Rating, Tag} from '../components';
+import {useEffect, useState} from 'react';
+import {number} from 'prop-types';
 
 export default function Home(): JSX.Element {
+
+  const [counter, setCounter] = useState<number>(0)
+
+
+
+  useEffect(() => {
+    console.log('counter ' + counter)
+    return function cleanup() {
+      console.log('unmount ')
+    }
+  }, [])
+
   return (
       <div>
-        <Htag tag='h1'>text</Htag>
-          <Button appearance='primary' className='fsdfsdfzzzzzzzzzzzzzzzzzzzz' arrow={'right'}>button</Button>
+        <Htag tag='h1'>{counter}</Htag>
+          <Button appearance='primary'arrow='right' onClick={() => setCounter(x => x + 1)}>button</Button>
           <Button appearance='ghost' arrow={'down'}>ghost button</Button>
           <P size={'l'}>BIG</P>
           <P size={'m'}>MediuM</P>
@@ -19,6 +33,7 @@ export default function Home(): JSX.Element {
           <Tag size="m" color='red'>small red</Tag>
           <Tag color='grey'>small red</Tag>
           <Tag href={'https://banana.by/ '}>small red</Tag>
+        <Rating rating={4}/>
       </div>
     // <div className={styles.container}>
     //   <main className={styles.main}>
