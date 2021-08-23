@@ -6,13 +6,14 @@ import {Button} from '../components/Button/Button';
 import {P, Rating, Tag} from '../components';
 import {useEffect, useState} from 'react';
 import {number} from 'prop-types';
+import {Layout} from '../layout/Layout';
 
 export default function Home(): JSX.Element {
 
   const [rating, setRating] = useState<number>(4)
 
   return (
-      <div>
+      <Layout>
         <Htag tag='h1'>Title</Htag>
           <Button appearance='primary'arrow='right'>button</Button>
           <Button appearance='ghost' arrow={'down'}>ghost button</Button>
@@ -25,7 +26,7 @@ export default function Home(): JSX.Element {
           <Tag color='grey'>small red</Tag>
           <Tag href={'https://banana.by/ '}>small red</Tag>
         <Rating rating={rating} isEditable setRating={setRating}/>
-      </div>
+      </Layout>
     // <div className={styles.container}>
     //   <main className={styles.main}>
     //     <h1 className={styles.title}>
